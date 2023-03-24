@@ -302,7 +302,12 @@ export default {
             label: "自定义规则",
             options: [
               {
-                label: "ACL4SSR",
+                label: "DIY_ACL4SSR_Online_Full_Google",
+                value:
+                  "/config/diy-rules.ini"
+              },
+              {
+                label: "DIY_ACL4SSR_Online_Full",
                 value:
                   "https://cdn.jsdelivr.net/gh/zsokami/ACL4SSR@b55e6c12667e6e18d53dff786b63b3ab85a14457/ACL4SSR_Online_Full_Mannix.ini"
               },

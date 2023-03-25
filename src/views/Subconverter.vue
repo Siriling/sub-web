@@ -31,7 +31,7 @@
               </el-form-item>
 
               <div v-if="advanced === '2'">
-                <el-form-item label="后端地址:">
+                <!-- <el-form-item label="后端地址:">
                   <el-autocomplete
                     style="width: 100%"
                     v-model="form.customBackend"
@@ -40,6 +40,29 @@
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
+                </el-form-item> -->
+                <el-form-item label="后端地址:">
+                  <el-select
+                      v-model="form.customBackend"
+                      allow-create
+                      filterable
+                      @change="selectChanged"
+                      placeholder="可输入自己的后端或者任选一个"
+                      style="width: 100%"
+                    >
+                    <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
+                  </el-select>
+                </el-form-item>
+                <el-form-item label="短链选择:">
+                  <el-select
+                      v-model="form.shortType"
+                      allow-create
+                      filterable
+                      placeholder="可输入其他可用短链API"
+                      style="width: 100%"
+                    >
+                    <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
+                  </el-select>
                 </el-form-item>
                 <el-form-item label="远程配置:">
                   <el-select
@@ -296,7 +319,33 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "https://subconverter.siriling.com:81/sub?" }],
+        shortTypes: {
+          "v1.mk": "https://v1.mk/short",
+          "d1.mk": "https://d1.mk/short",
+          "dlj.tf": "https://dlj.tf/short",
+          "suo.yt": "https://suo.yt/short",
+          "sub.cm": "https://sub.cm/short",
+        },
+        customBackend: {
+          "本地局域网后端": "http://127.0.0.1:25500/sub?",
+          "Siriling的后端": "https://subconverter.siriling.com:81/sub?",
+          "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
+          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk/sub?",
+          nameless13提供: "https://www.nameless13.com/sub?",
+          subconverter作者提供: "https://sub.xeton.dev/sub?",
+          "sub-web作者提供": "https://api.wcc.best/sub?",
+          "sub作者&lhie1提供": "https://api.dler.io/sub?",
+        },
+        backendOptions: [
+          {value: "http://127.0.0.1:25500/sub?"},
+          {value: "https://subconverter.siriling.com:81/sub?"},
+          {value: "https://api.v1.mk/sub?"},
+          {value: "https://sub.d1.mk/sub?"},
+          {value: "https://www.nameless13.com/sub?"},
+          {value: "https://sub.xeton.dev/sub?"},
+          {value: "https://api.wcc.best/sub?"},
+          {value: "https://api.dler.io/sub?"},
+        ],
         remoteConfig: [
           {
             label: "自定义规则",
@@ -304,7 +353,12 @@ export default {
               {
                 label: "DIY_ACL4SSR_Online_Full_Google",
                 value:
-                  "/config/diy-rules.ini"
+                  "https://sub.siriling.com:81/config/diy-rules.ini"
+              },
+              {
+                label: "DIY",
+                value:
+                  "http://localhost:8080/config/diy.ini"
               },
               {
                 label: "DIY_ACL4SSR_Online_Full",
@@ -680,7 +734,8 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "",
+        customBackend: "https://subconverter.siriling.com:81/sub?",
+        shortType: "https://v1.mk/short",
         remoteConfig: "",
         excludeRemarks: "",
         includeRemarks: "",

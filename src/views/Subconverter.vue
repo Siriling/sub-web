@@ -351,19 +351,14 @@ export default {
             label: "自定义规则",
             options: [
               {
-                label: "DIY_ACL4SSR_Online_Full_Google",
+                label: "DIY外网规则",
                 value:
-                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules.ini"
+                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini"
               },
               {
-                label: "DIY",
+                label: "DIY内网规则",
                 value:
-                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy.ini"
-              },
-              {
-                label: "DIY_ACL4SSR_Online_Full",
-                value:
-                  "https://cdn.jsdelivr.net/gh/zsokami/ACL4SSR@b55e6c12667e6e18d53dff786b63b3ab85a14457/ACL4SSR_Online_Full_Mannix.ini"
+                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rule2.ini"
               },
             ]
           },
@@ -736,7 +731,7 @@ export default {
         clientType: "",
         customBackend: "https://subconverter.siriling.com:81/sub?",
         shortType: "https://v1.mk/short",
-        remoteConfig: "",
+        remoteConfig: "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",

@@ -330,11 +330,11 @@ export default {
           "本地局域网后端": "http://127.0.0.1:25500/sub?",
           "Siriling的后端": "https://subconverter.siriling.com:81/sub?",
           "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
-          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk/sub?",
-          nameless13提供: "https://www.nameless13.com/sub?",
-          subconverter作者提供: "https://sub.xeton.dev/sub?",
-          "sub-web作者提供": "https://api.wcc.best/sub?",
-          "sub作者&lhie1提供": "https://api.dler.io/sub?",
+          "品云": "https://sub.id9.cc/sub?",
+          "nameless13": "https://www.nameless13.com/sub?",
+          "subconverter作者": "https://sub.xeton.dev/sub?",
+          "sub-web作者": "https://api.wcc.best/sub?",
+          "sub作者&lhie1": "https://api.dler.io/sub?",
         },
         backendOptions: [
           {value: "http://127.0.0.1:25500/sub?"},
@@ -739,11 +739,11 @@ export default {
         nodeList: false,
         extraset: false,
         sort: false,
-        udp: false,
+        udp: true, //是否启用UDP
         tfo: false,
-        scv: true,
+        scv: true, //是否跳过证书认证
         fdn: false,
-        appendType: false,
+        appendType: false, //节点类型
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
 

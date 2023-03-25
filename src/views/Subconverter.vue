@@ -358,7 +358,7 @@ export default {
               {
                 label: "DIY内网规则",
                 value:
-                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rule2.ini"
+                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules2.ini"
               },
             ]
           },

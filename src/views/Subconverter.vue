@@ -353,12 +353,12 @@ export default {
               {
                 label: "DIY_ACL4SSR_Online_Full_Google",
                 value:
-                  "https://sub.siriling.com:81/config/diy-rules.ini"
+                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules.ini"
               },
               {
                 label: "DIY",
                 value:
-                  "http://localhost:8080/config/diy.ini"
+                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy.ini"
               },
               {
                 label: "DIY_ACL4SSR_Online_Full",

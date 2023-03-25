@@ -5,7 +5,7 @@
         <el-card>
           <div slot="header">
             在线订阅转换
-            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
+            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" title="访问项目主页"/>
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
@@ -41,13 +41,13 @@
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
                 </el-form-item> -->
-                <el-form-item label="后端地址:">
+                <el-form-item label="后端选择:">
                   <el-select
                       v-model="form.customBackend"
                       allow-create
                       filterable
                       @change="selectChanged"
-                      placeholder="可输入自己的后端或者任选一个"
+                      placeholder="可输入其他可用的后端API地址"
                       style="width: 100%"
                     >
                     <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
@@ -58,7 +58,7 @@
                       v-model="form.shortType"
                       allow-create
                       filterable
-                      placeholder="可输入其他可用短链API"
+                      placeholder="可输入其他可用的短链API地址"
                       style="width: 100%"
                     >
                     <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
@@ -729,7 +729,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://subconverter.siriling.com:81/sub?",
+        customBackend: defaultBackend,
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini",
         excludeRemarks: "",

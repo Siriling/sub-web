@@ -5,7 +5,7 @@
         <el-card>
           <div slot="header">
             在线订阅转换
-            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" title="访问项目主页"/>
+            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject"/>
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
@@ -320,8 +320,9 @@ export default {
           Surge2: "surge&ver=2",
         },
         shortTypes: {
-          "v1.mk": "https://v1.mk/short",
-          "d1.mk": "https://d1.mk/short",
+          // "Siriling的短链": "https://url.siriling.com:81/short",
+          "Siriling的短链": shortUrlBackend,
+          "肥羊": "https://v1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
           "suo.yt": "https://suo.yt/short",
           "sub.cm": "https://sub.cm/short",
@@ -730,7 +731,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: defaultBackend,
-        shortType: "https://v1.mk/short",
+        shortType: shortUrlBackend,
         remoteConfig: "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -905,37 +906,34 @@ export default {
       this.$message.success("定制订阅已复制到剪贴板");
     },
     makeShortUrl() {
-      if (this.customSubUrl === "") {
-        this.$message.warning("请先生成订阅链接，再获取对应短链接");
-        return false;
-      }
-
+      let duan =
+          this.form.shortType === ""
+              ? shortUrlBackend
+              : this.form.shortType;
       this.loading = true;
-
       let data = new FormData();
       data.append("longUrl", btoa(this.customSubUrl));
-
       this.$axios
-        .post(shortUrlBackend, data, {
-          header: {
-            "Content-Type": "application/form-data; charset=utf-8"
-          }
-        })
-        .then(res => {
-          if (res.data.Code === 1 && res.data.ShortUrl !== "") {
-            this.curtomShortSubUrl = res.data.ShortUrl;
-            this.$copyText(res.data.ShortUrl);
-            this.$message.success("短链接已复制到剪贴板");
-          } else {
-            this.$message.error("短链接获取失败：" + res.data.Message);
-          }
-        })
-        .catch(() => {
-          this.$message.error("短链接获取失败");
-        })
-        .finally(() => {
-          this.loading = false;
-        });
+          .post(duan, data, {
+            header: {
+              "Content-Type": "application/form-data; charset=utf-8"
+            }
+          })
+          .then(res => {
+            if (res.data.Code === 1 && res.data.ShortUrl !== "") {
+              this.customShortSubUrl = res.data.ShortUrl;
+              this.$copyText(res.data.ShortUrl);
+              this.$message.success("短链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）");
+            } else {
+              this.$message.error("短链接获取失败：" + res.data.Message);
+            }
+          })
+          .catch(() => {
+            this.$message.error("短链接获取失败");
+          })
+          .finally(() => {
+            this.loading = false;
+          });
     },
     notify() {
       const h = this.$createElement;
@@ -946,9 +944,17 @@ export default {
         message: h(
           "i",
           { style: "color: teal" },
-          "选择你的订阅地址和客户端类型，支持各种订阅链接相互转换。"
+          "填写你的订阅地址和客户端类型，支持各种订阅链接相互转换"
         )
       });
+      setTimeout(() => {
+        this.$notify({
+          title: '联系我',
+          dangerouslyUseHTMLString: true,
+          type: 'info',
+          message: `电报：<a href=${this.myBot} class="el-link el-link--primary"><span class="el-link--inner">Siriling</span></a>`
+        });
+      }, 1000);
     },
     confirmUploadConfig() {
       if (this.uploadConfig === "") {

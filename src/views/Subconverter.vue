@@ -38,7 +38,7 @@
                     :fetch-suggestions="backendSearch"
                     placeholder="填写后端服务地址"
                   >
-                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
+                    <el-button slot="append" @click="gotosubConverterGithub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
                 </el-form-item> -->
                 <el-form-item label="后端选择:">
@@ -287,7 +287,8 @@
 <script>
 const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
-const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
+const subConverterGithubLink = process.env.VUE_APP_SUBCONVERTER_BACKEND_GITHUB
+const shortGithubLink = process.env.VUE_APP_SHORT_BACKEND_GITHUB
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
@@ -320,8 +321,7 @@ export default {
           Surge2: "surge&ver=2",
         },
         shortTypes: {
-          // "Siriling的短链": "https://url.siriling.com:81/short",
-          "Siriling的短链": shortUrlBackend,
+          "Siriling的短链服务": shortUrlBackend,
           "肥羊": "https://v1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
           "suo.yt": "https://suo.yt/short",
@@ -329,7 +329,7 @@ export default {
         },
         customBackend: {
           "本地局域网后端": "http://127.0.0.1:25500/sub?",
-          "Siriling的后端": "https://subconverter.siriling.com:81/sub?",
+          "Siriling的后端服务": "https://subconverter.siriling.com:81/sub?",
           "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
           "品云": "https://sub.id9.cc/sub?",
           "nameless13": "https://www.nameless13.com/sub?",
@@ -795,8 +795,11 @@ export default {
     goToProject() {
       window.open(project);
     },
-    gotoGayhub() {
-      window.open(gayhubRelease);
+    gotosubConverterGithub() {
+      window.open(subConverterGithubLink);
+    },
+    gotoshortGithub() {
+      window.open(shortGithubLink);
     },
     gotoRemoteConfig() {
       window.open(remoteConfigSample);

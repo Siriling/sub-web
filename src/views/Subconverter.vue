@@ -326,6 +326,7 @@ export default {
           "dlj.tf": "https://dlj.tf/short",
           "suo.yt": "https://suo.yt/short",
           "sub.cm": "https://sub.cm/short",
+          "ops.ci": "https://s.ops.ci/short",
         },
         customBackend: {
           "本地局域网后端": "http://127.0.0.1:25500/sub?",

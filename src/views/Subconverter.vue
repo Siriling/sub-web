@@ -156,14 +156,15 @@
                 </el-input>
               </el-form-item>
               <el-form-item label="订阅短链:">
-                <el-input class="copy-content" disabled v-model="curtomShortSubUrl">
+                <el-input class="copy-content" disabled v-model="customShortSubUrl">
                   <el-button
                     slot="append"
-                    v-clipboard:copy="curtomShortSubUrl"
+                    v-clipboard:copy="customShortSubUrl"
                     v-clipboard:success="onCopy"
                     ref="copy-btn"
                     icon="el-icon-document-copy"
-                  >复制</el-button>
+                  >复制
+                  </el-button>
                 </el-input>
               </el-form-item>
 
@@ -173,14 +174,16 @@
                   type="danger"
                   @click="makeUrl"
                   :disabled="form.sourceSubUrl.length === 0"
-                >生成订阅链接</el-button>
+                >生成订阅链接
+                </el-button>
                 <el-button
                   style="width: 120px"
                   type="danger"
                   @click="makeShortUrl"
                   :loading="loading"
                   :disabled="customSubUrl.length === 0"
-                >生成短链接</el-button>
+                >生成短链接
+                </el-button>
                 <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
 
@@ -762,7 +765,7 @@ export default {
 
       loading: false,
       customSubUrl: "",
-      curtomShortSubUrl: "",
+      customShortSubUrl: "",
 
       dialogUploadConfigVisible: false,
       loadConfig: "",
@@ -791,7 +794,7 @@ export default {
   },
   methods: {
     onCopy() {
-      this.$message.success("Copied!");
+      this.$message.success("已复制!");
     },
     goToProject() {
       window.open(project);
@@ -815,8 +818,8 @@ export default {
       window.open(
         url +
           encodeURIComponent(
-            this.curtomShortSubUrl !== ""
-              ? this.curtomShortSubUrl
+            this.customShortSubUrl !== ""
+              ? this.customShortSubUrl
               : this.customSubUrl
           )
       );

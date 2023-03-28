@@ -99,7 +99,7 @@
                 <el-form-item label-width="0px">
                   <el-row type="flex">
                     <el-col>
-                      <el-checkbox v-model="form.nodeList" label="输出为 Node List" border></el-checkbox>
+                      <el-checkbox v-model="form.nodeList" label="仅输出节点信息" border></el-checkbox>
                     </el-col>
                     <el-popover placement="bottom" v-model="form.extraset">
                       <el-row>
@@ -194,14 +194,16 @@
                   @click="dialogUploadConfigVisible = true"
                   icon="el-icon-upload"
                   :loading="loading"
-                >上传配置</el-button>
+                >上传配置
+                </el-button>
                 <el-button
                   style="width: 120px"
                   type="primary"
                   @click="clashInstall"
                   icon="el-icon-connection"
                   :disabled="customSubUrl.length === 0"
-                >一键导入Clash</el-button>
+                >一键导入Clash
+                </el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
@@ -210,7 +212,8 @@
                     @click="dialogLoadConfigVisible = true"
                     icon="el-icon-copy-document"
                     :loading="loading"
-                >从URL解析</el-button>
+                >从URL解析
+                </el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -226,7 +229,7 @@
       width="700px"
     >
       <div slot="title">
-        Remote config upload
+        远程配置上传
         <el-popover trigger="hover" placement="right" style="margin-left: 10px">
           <el-link type="primary" :href="sampleConfig" target="_blank" icon="el-icon-info">参考配置</el-link>
           <i class="el-icon-question" slot="reference"></i>

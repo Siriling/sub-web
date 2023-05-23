@@ -2,15 +2,15 @@
 
 # 目录
 
-[一、简介](https://github.com/Siriling/dockerfiles/tree/main/subconverter#一简介)
+[一、简介](#一简介)
 
-[二、展示](https://github.com/Siriling/dockerfiles/tree/main/subconverter#二展示)
+[二、展示](#二展示)
 
-[三、使用](https://github.com/Siriling/dockerfiles/blob/main/subconverter/三使用)
+[三、使用](#三使用)
 
-[四、Nginx反向代理配置](https://github.com/Siriling/dockerfiles/tree/main/subconverter#四nginx反向代理配置)
+[四、Nginx反向代理配置](#四nginx反向代理配置)
 
-[五、仓库地址](https://github.com/Siriling/dockerfiles/tree/main/subconverter#五仓库信息)
+[五、仓库地址](#五仓库信息)
 
 # 一、简介
 

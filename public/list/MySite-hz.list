@@ -1,5 +1,5 @@
 # MySite 我的站点HZ
 
 # HZ
-DOMAIN-KEYWORD,hz.siriling.com
-DOMAIN-KEYWORD,ipv6.siriling.com
+DOMAIN-KEYWORD,hz.siriling.com,no-resolve
+DOMAIN-KEYWORD,ipv6.siriling.com,no-resolve

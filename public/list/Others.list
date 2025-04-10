@@ -3,12 +3,12 @@
 # 泥视频
 DOMAIN-SUFFIX,nivod.tv
 DOMAIN-SUFFIX,nivod
-#Mikanani（订阅番剧）
+# Mikanani（订阅番剧）
 DOMAIN-SUFFIX,mikanani.me
 DOMAIN-SUFFIX,mikanani
-#ChatGPT（人工智能）
+# ChatGPT（人工智能）
 DOMAIN-SUFFIX,poe.com
 DOMAIN-KEYWORD,chat-shared
-#TheMovieDb
+# TheMovieDb
 DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,themoviedb

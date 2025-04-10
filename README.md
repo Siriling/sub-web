@@ -102,8 +102,6 @@ yarn serve
 yarn build
 ```
 
-[四、Nginx反向代理配置](https://github.com/Siriling/dockerfiles/tree/main/subconverter#四nginx反向代理配置)
-
 # 四、Nginx反向代理配置
 
 Sub-web访问短链接出现跨域问题，需要在Nginx里修改，参考[myurls.conf](https://raw.githubusercontent.com/Siriling/dockerfiles/main/subconverter/myurls.conf)

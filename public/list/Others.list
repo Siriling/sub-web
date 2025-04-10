@@ -9,3 +9,6 @@ DOMAIN-SUFFIX,mikanani
 #ChatGPT（人工智能）
 DOMAIN-SUFFIX,poe.com
 DOMAIN-KEYWORD,chat-shared
+#TheMovieDb
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,themoviedb

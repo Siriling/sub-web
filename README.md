@@ -27,7 +27,7 @@
 
 ### 基础模式
 
-- 使用的是我自定义的订阅配置文件，[点击查看](https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules2.ini)
+- 使用的是我自定义的订阅配置文件，[点击查看](https://cdn.jsdelivr.net/gh/Siriling/sub-web@main/public/config/diy-rules2.ini)
 - 使用的是我的远程后端程序
 
 ### 进阶模式
@@ -60,7 +60,7 @@ docker run -d \
 
 ### docker compose
 
-- 文件下载：[docker-compose.yml](https://raw.githubusercontent.com/Siriling/dockerfiles/main/subconverter/docker-compose.yml)
+- 文件下载：[docker-compose.yml](https://cdn.jsdelivr.net/gh/Siriling/dockerfiles@main/subconverter/docker-compose.yml)
 - 修改`MYURLS_DOMAIN`为你的域名
 - 修改`MYURLS_TTL`为短链接有效期（单位：天）
 - 修改`MYURLS_REDIS`为自己Redis链接（`IP:端口`）
@@ -96,7 +96,7 @@ yarn serve
 
 把网站发布到服务器，你需要把程序打包，执行以下打包命令，生成的dist目录即为打包后的文件目录
 
-- 如需修改默认后端，请修改`src/views/Subconverter.vue`中`defaultBackend`配置项
+- 如需修改默认后端，请修改`.env`中`VUE_APP_SUBCONVERTER_DEFAULT_BACKEND`配置项
 
 ```shell
 yarn build
@@ -104,7 +104,7 @@ yarn build
 
 # 四、Nginx反向代理配置
 
-Sub-web访问短链接出现跨域问题，需要在Nginx里修改，参考[myurls.conf](https://raw.githubusercontent.com/Siriling/dockerfiles/main/subconverter/myurls.conf)
+Sub-web访问短链接出现跨域问题，需要在Nginx里修改，参考[myurls.conf](https://cdn.jsdelivr.net/gh/Siriling/dockerfiles@main/subconverter/myurls.conf)
 
 ```
 location /{

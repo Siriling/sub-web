@@ -73,6 +73,8 @@ docker-compose up -d
 
 需要安装[Node](https://nodejs.org/zh-cn/)和[Yarn](https://legacy.yarnpkg.com/en/docs/install)来安装依赖与打包发布。你可以通过以下命令查看是否安装成功。
 
+- node.js版本：v16.20.2
+
 ```shell
 node -v
 yarn -v

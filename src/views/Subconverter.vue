@@ -361,12 +361,12 @@ export default {
               {
                 label: "DIY外网规则",
                 value:
-                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini"
+                  "https://cdn.jsdelivr.net/gh/Siriling/sub-web@main/public/config/diy-rules1.ini"
               },
               {
                 label: "DIY内网规则",
                 value:
-                  "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules2.ini"
+                  "https://cdn.jsdelivr.net/gh/Siriling/sub-web@main/public/config/diy-rules2.ini"
               },
             ]
           },
@@ -739,7 +739,7 @@ export default {
         clientType: "",
         customBackend: defaultBackend,
         shortType: shortUrlBackend,
-        remoteConfig: "https://raw.githubusercontent.com/Siriling/sub-web/main/public/config/diy-rules1.ini",
+        remoteConfig: "https://cdn.jsdelivr.net/gh/Siriling/sub-web@main/public/config/diy-rules1.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
